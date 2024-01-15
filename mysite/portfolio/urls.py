@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from . import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('portfolio.urls')),
-    # Add other top-level patterns as needed
-]
+    #Pre-defined paths
+    path("polls/", include("polls.urls")),
 
+    #Paths defined by me
+    path("resume/", views.resume),
+    path('about/', views.about_page, name='about'),
+    path("skills/", views.skills),
+    path("projects/", views.projects),
+    path("contact/", views.contact),
+    path("", views.index),
+]
