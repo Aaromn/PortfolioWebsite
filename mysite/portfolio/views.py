@@ -4,28 +4,24 @@ from django.views import View
 import os
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'portfolio/index.html')
 
 def about_page(request): 
-    current_directory = os.getcwd()
-    print("Current working directory:", current_directory)
     return render(request, 'portfolio/about.html')
 
 def resume(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'portfolio/resume.html')
 
 def skills(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'portfolio/skills.html')
 
 def projects(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'portfolio/projects.html')
 
 def contact(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'portfolio/contact.html')
 
-def portfolio(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
 def bounce(request):
-    return HttpResponseRedirect('https://aaromnn.pythonanywhere.com/portfolio')
+    return HttpResponseRedirect('https://aaromnn.pythonanywhere.com')
 
 
