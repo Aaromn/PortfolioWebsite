@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from . import views
 from django.views.generic import TemplateView
+from .views import send_message
 
 urlpatterns = [
     #Pre-defined paths
@@ -29,5 +30,6 @@ urlpatterns = [
     path("skills/", views.skills),
     path("projects/", views.projects),
     path("contact/", views.contact),
+    path('send-message/', send_message, name='send_message'),
     path("", views.index),
 ]
